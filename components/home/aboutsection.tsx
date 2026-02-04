@@ -34,7 +34,7 @@ export default function AboutSection() {
         {/* About Cards */}
         <Reveal delay={0.1}>
           <Reveal delay={0.1}>
-            <div className="mt-12 flex justify-center gap-10 items-center">
+            <div className="mt-12 flex flex-wrap justify-center gap-6 md:gap-10 items-center">
               {aboutCards.map((card, index) => {
                 const Icon = cardIcons[index % cardIcons.length];
 
@@ -45,7 +45,8 @@ export default function AboutSection() {
                 return (
                   <Reveal key={index} delay={index * 0.1}>
                     <div
-                      className={`flex flex-col items-start text-left p-6 md:p-8 bg-[var(--color-primary)] rounded-xl border border-[var(--color-border)] cursor-pointer transition-all duration-300 transform ${cardShadow} ${cardZ} hover:scale-105 w-80 md:w-96 min-h-[350px]`}
+                      className={`flex flex-col items-start text-left p-6 md:p-8 bg-[var(--color-primary)] rounded-xl border border-[var(--color-border)] cursor-pointer transition-all duration-300 transform ${cardShadow} ${cardZ} hover:scale-105
+                        w-full sm:w-72 md:w-80 lg:w-96 min-h-[350px]`}
                     >
                       <Icon className="w-10 h-10 text-white mb-4" />
                       <h3 className="text-2xl font-semibold text-white mb-3">
@@ -56,9 +57,7 @@ export default function AboutSection() {
                         <div className="flex flex-col gap-2">
                           {card.description.map((item, i) => (
                             <p key={i} className="text-white">
-                              <span className="text-2xl font-bold mr-1">
-                                {item[0]}
-                              </span>
+                              <span className="text-2xl font-bold mr-1">{item[0]}</span>
                               {item.slice(1)}
                             </p>
                           ))}
@@ -72,8 +71,8 @@ export default function AboutSection() {
               })}
             </div>
           </Reveal>
-
         </Reveal>
+
 
         {/* Highlights */}
         <Reveal delay={0.1}>
