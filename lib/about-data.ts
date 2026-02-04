@@ -2,23 +2,31 @@ export const aboutCards = [
   {
     title: "Our Mission",
     description:
-      "To provide holistic education that integrates academic excellence, spiritual growth, and character development, empowering students to reach their full potential.",
+      "To transform the lives of the students by impacting them with God fearing Values and providing them with quality and affordable education",
   },
   {
-    title: "Our Vision",
-    description:
-      "To be a leading educational institution recognized for producing disciplined, God-fearing, and academically accomplished learners.",
-  },
-  {
-    title: "Our Values",
+    title: "Core Values",
     description: [
-      "Faith and Spiritual Growth",
-      "Academic Excellence",
-      "Integrity and Discipline",
+      "Efficiency",
+      "Loyalty",
+      "Spirituality",
+      "Honesty and Integrity",
+      "Acheivement",
+      "Determination",
+      "Daring",
+      "Authenticity",
+      "Integrity",
+
       // "Creativity and Innovation",
       // "Community and Respect",
     ],
   },
+  {
+    title: "Our Vision",
+    description:
+      "We strive to better the lots of students in order to produce students who would stand for integrity and represent God wherever they find themselves",
+  },
+  
 ];
 
 export const highlights = [

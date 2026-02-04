@@ -33,31 +33,46 @@ export default function AboutSection() {
 
         {/* About Cards */}
         <Reveal delay={0.1}>
-          <div className="mt-12 grid md:grid-cols-3 gap-10 text-left">
-            {aboutCards.map((card, index) => {
-              const Icon = cardIcons[index % cardIcons.length]; // Unique icons for cards
-              return (
-                <Reveal key={index} delay={index * 0.1}>
-                  <div className="flex flex-col items-start p-6 bg-[var(--color-primary)] rounded-xl shadow-lg border border-[var(--color-border)] cursor-pointer h-full transition-all duration-300">
-                    <Icon className="w-10 h-10 text-white mb-4" />
-                    <h3 className="text-2xl font-semibold text-white mb-3">
-                      {card.title}
-                    </h3>
+          <Reveal delay={0.1}>
+            <div className="mt-12 flex justify-center gap-10 items-center">
+              {aboutCards.map((card, index) => {
+                const Icon = cardIcons[index % cardIcons.length];
 
-                    {Array.isArray(card.description) ? (
-                      <ul className="text-white list-disc pl-5 space-y-2">
-                        {card.description.map((item, i) => (
-                          <li key={i}>{item}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-white">{card.description}</p>
-                    )}
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
+                const isMiddle = index === 1;
+                const cardShadow = isMiddle ? "shadow-2xl" : "shadow-lg";
+                const cardZ = isMiddle ? "z-10" : "z-0";
+
+                return (
+                  <Reveal key={index} delay={index * 0.1}>
+                    <div
+                      className={`flex flex-col items-start text-left p-6 md:p-8 bg-[var(--color-primary)] rounded-xl border border-[var(--color-border)] cursor-pointer transition-all duration-300 transform ${cardShadow} ${cardZ} hover:scale-105 w-80 md:w-96 min-h-[350px]`}
+                    >
+                      <Icon className="w-10 h-10 text-white mb-4" />
+                      <h3 className="text-2xl font-semibold text-white mb-3">
+                        {card.title}
+                      </h3>
+
+                      {Array.isArray(card.description) ? (
+                        <div className="flex flex-col gap-2">
+                          {card.description.map((item, i) => (
+                            <p key={i} className="text-white">
+                              <span className="text-2xl font-bold mr-1">
+                                {item[0]}
+                              </span>
+                              {item.slice(1)}
+                            </p>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-white">{card.description}</p>
+                      )}
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </Reveal>
+
         </Reveal>
 
         {/* Highlights */}
