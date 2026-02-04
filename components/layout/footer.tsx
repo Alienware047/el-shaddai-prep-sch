@@ -1,9 +1,10 @@
+import { Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-surface)] border-t border-[var(--color-border)] mt-20">
+    <footer className="bg-[var(--color-surface)] border-t border-[var(--color-border)]">
       <div className="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
         {/* School Info */}
         <div>
@@ -40,7 +41,6 @@ export default function Footer() {
             <li><Link href="/about" className="hover:text-[var(--color-primary)]">About</Link></li>
             <li><Link href="/academics" className="hover:text-[var(--color-primary)]">Academics</Link></li>
             <li><Link href="/admissions" className="hover:text-[var(--color-primary)]">Admissions</Link></li>
-            {/* <li><Link href="/news" className="hover:text-[var(--color-primary)]">News</Link></li> */}
           </ul>
         </div>
 
@@ -58,16 +58,38 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Contact */}
-        <div>
-          <h4 className="font-medium mb-3">Contact</h4>
-          <p className="text-sm text-[var(--color-text-muted)]">
-            📞 +233 20 826 2241
-          </p>
-          <p className="text-sm text-[var(--color-text-muted)]">
-            ✉️ suhumelshaddai1997@gmail.com
-          </p>
-        </div>
+        {/* Contact with Icons */}
+        
+      <div>
+        <h4 className="font-medium mb-3">Contact</h4>
+        <ul className="space-y-2 text-sm text-[var(--color-text-muted)]">
+          <li className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-[var(--color-primary)]" />
+            <Link href="tel:+233208262241" className="hover:text-[var(--color-primary)]">
+              +233 20 826 2241
+            </Link>
+          </li>
+          <li className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-[var(--color-primary)]" />
+            <Link href="tel:+233249042904" className="hover:text-[var(--color-primary)]">
+              +233 24 904 2904
+            </Link>
+          </li>
+          <li className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-[var(--color-primary)]" />
+            <Link href="tel:+233240272519" className="hover:text-[var(--color-primary)]">
+              +233 24 027 2519
+            </Link>
+          </li>
+          <li className="flex items-center gap-2">
+            <Mail className="w-4 h-4 text-[var(--color-primary)]" />
+            <Link href="mailto:suhumelshaddai1997@gmail.com" className="hover:text-[var(--color-primary)]">
+              suhumelshaddai1997@gmail.com
+            </Link>
+          </li>
+        </ul>
+      </div>
+
       </div>
 
       {/* Bottom Bar */}
